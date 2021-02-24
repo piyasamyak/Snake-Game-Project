@@ -1,1 +1,1 @@
-# Play the classic game of snake
+# Play the classic game of snake!
