@@ -22,6 +22,13 @@ class Snake:
             new_segment.penup()
             self.snake.append(new_segment)
 
+    def reset(self):
+        for seg in self.snake:
+            seg.goto(1000, 1000)
+        self.snake.clear()
+        self.create_snake(INITIAL_SEGS)
+        self.head = self.snake[0]
+
     def move(self):
         for seg in range(len(self.snake) - 1, 0, -1):
             new_xcor = self.snake[seg - 1].xcor()
@@ -41,10 +48,11 @@ class Snake:
         if self.head.heading() != RIGHT:
             self.head.setheading(180)
 
-
     def moveRight(self):
         if self.head.heading() != LEFT:
             self.head.setheading(0)
+
+
 
 
 
